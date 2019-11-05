@@ -1,0 +1,532 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+  font-family: 'Permanent Marker', cursive;
+}
+
+@import 'variables';
+
+body{
+ background-color: black;
+ font-family: 'Permanent Marker', cursive;
+ color: $mainColour;
+}
+
+.col{
+    min-height: 49px;
+    float: left;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+h1{
+  font-size: 24px;
+}
+
+.welcomeLogo{
+  display: flex;
+  justify-content: space-between;
+}
+
+.title{
+  margin-left: 10px;
+}
+
+.loyalty{
+
+  .row{
+    @include flexRow;
+    margin: 20px;
+    .cupBought{
+      flex: 1;
+      text-align: center;
+      color: $mainColour;
+    }
+    .cupNotBought{
+      flex: 1;
+      text-align: center;
+      color: #9C9797;
+    }
+    .fa-glass-whiskey{
+      font-size: 3em;
+      transform:scale(1,1.5);
+    }
+    .cupFree{
+      display: flex;
+      position: relative;
+      flex: 1;
+      text-align: center;
+      }
+      .cupImage{
+        display: flex;
+        position: absolute;
+        color: #9C9797;
+        z-index: 5;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .free{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+      }
+  }
+  h5{
+    text-align:center;
+  }
+}
+
+.menuContainer{
+  text-align: center;
+  .menuList{
+    list-style: none;
+    line-height: normal;
+    .menuItemTitle{
+      font-size: 1.25em;
+      padding-top: 10px;
+    }
+    .menuTitle{
+      color: #FFFD80;
+      font-size: 16px;
+    }
+    .menuItem{
+      font-size: 0.75em;
+      line-height: 90%;
+    }
+    .item1{
+      color: $item1;
+    }
+    .item2{
+      color: $item2;
+    }
+    .item3{
+      color: $item3;
+    }
+    .item4{
+      color: $item4;
+    }
+    .item5{
+      color: $item5;
+    }
+  }
+}
+
+a{
+  text-decoration: none;
+  color: $mainColour;
+}
+
+.placeOrder{
+  border: 1px solid $mainColour;
+  width: 275px;
+  margin: 20px auto 12px auto;
+  text-align: center;
+  h2{
+    font-size: 30px;
+  }
+  border-radius: 15px;
+}
+
+.progressSection{
+  position: fixed;
+  width: 100%;
+}
+
+.pageTitle{
+  background-color: #404040;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  h1{
+    padding-left: 10px;
+  }
+}
+
+.pageTabs{
+  display: flex;
+  .col3{
+    @include flexCenter;
+    background-color: $mainColour;
+    border: 1px solid #000000;
+    border-right: 0;
+    color: #000000;
+    h3{
+      font-size: 16px;
+    }
+    h4{
+      font-size: 12px;
+    }
+  }
+  .active{
+    background-color: #352647;
+    color: $mainColour;
+  }
+}
+
+
+.pageTabs:after {
+    clear: both;
+    display: block;
+    content: '';
+}
+
+.progressBar{
+  width: 100%;
+  height: 10px;
+  background-color: $mainColour;
+}
+
+#bar{
+  background-color: $mainGreenColor;
+  width: 25%;
+  height: 10px;
+  transition: 0.5s
+}
+
+.orderingContent{
+  margin: 0 auto;
+  padding-top: 110px;
+  // display: none;
+  width: 90%;
+  .box{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:12px;
+    margin-top: 10px;
+    height:80px;
+    background-color: $contentBgColor;
+    font-size: 14px;
+    .btns{
+      @include flexCenter;
+    }
+    .smallBtn{
+      padding: 5px 2px 5px 2px;
+      border: 1px solid $mainColour;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-color: $contentBgColor;
+      font-size: 12px;
+      color: $mainColour;
+    }
+    .largeBtn{
+      padding: 5px 2px 5px 2px;
+      border-right: 1px solid $mainColour;
+      border-top: 1px solid $mainColour;
+      border-bottom: 1px solid $mainColour;
+      border-left: 0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-color: $contentBgColor;
+      font-size: 12px;
+      color: $mainColour;
+    }
+  }
+  .item1{
+    color: $item1;
+  }
+  .item2{
+    color: $item2;
+  }
+  .item3{
+    color: $item3;
+  }
+  .item4{
+    color: $item4;
+  }
+  .item5{
+    color: $item5;
+    margin-bottom: 108px;
+  }
+  .confirmBtn{
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    border: 0;
+    background-color: $mainGreenColor;
+    color: $mainColour;
+    font-size: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 10px;
+  }
+}
+
+.confirmOrderContent{
+  padding-top: 110px;
+  display: none;
+  .mainContainer{
+    margin: 0 auto;
+    width: 90%;
+    .box{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding:12px;
+      margin-top: 10px;
+      height:80px;
+      background-color: $contentBgColor;
+      font-size: 14px;
+      .btns{
+        @include flexCenter;
+      }
+      .smallBtn{
+        margin-left: 5px;
+        padding: 5px 2px 5px 2px;
+        border: 1px solid $mainColour;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background-color: $contentBgColor;
+        font-size: 12px;
+        color: $mainColour;
+      }
+      .largeBtn{
+        width: 25px;
+        display: block;
+        padding: 5px 2px 5px 2px;
+        border-right: 1px solid $mainColour;
+        border-top: 1px solid $mainColour;
+        border-bottom: 1px solid $mainColour;
+        border-left: 0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: $contentBgColor;
+        font-size: 12px;
+        color: $mainColour;
+      }
+    }
+    .item1{
+      color: $item1;
+    }
+    .item2{
+      color: $item2;
+    }
+    .item3{
+      color: $item3;
+    }
+    .item4{
+      color: $item4;
+    }
+    .item5{
+      color: $item5;
+      margin-bottom: 108px;
+    }
+    .previousBtn{
+      position: fixed;
+      bottom: 60px;
+      float: left;
+      border: 0;
+      background-color: $mainRedColor;
+      color: $mainColour;
+      font-size: 24px;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      margin-top: 10px;
+      left: 20px;
+    }
+    .confirmBtn{
+      position: fixed;
+      bottom: 60px;
+      right: 20px;
+      border: 0;
+      background-color: $mainGreenColor;
+      color: $mainColour;
+      font-size: 24px;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      margin-top: 10px;
+    }
+  }
+
+}
+
+.paymentContent{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 110px;
+  display: none;
+  .row{
+    @include flexRow;
+  }
+  .inStore{
+    @include flexCenter;
+    background-color: $contentBgColor;
+    border-radius: 10px;
+    border: 1px solid $mainColour;
+    height: 80px;
+    width: 320px;
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  .payNow{
+    @include flexCenter;
+    background-color: $contentBgColor;
+    border-radius: 10px;
+    border: 1px solid $mainColour;
+    height: 80px;
+    width: 320px;
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  .creditCardPayment{
+    display: none;
+    .cardDetails{
+      input{
+        width: 100%;
+      }
+    }
+    .row{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    padding:5px;
+    margin-top: 10px;
+    background-color: $contentBgColor;
+    font-size: 14px;
+    .submitBtn{
+      border: 0;
+      background-color: $mainGreenColor;
+      color: $mainColour;
+      font-size: 14px;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  }
+
+  .previousBtn{
+    position: fixed;
+    bottom: 60px;
+    float: left;
+    border: 0;
+    background-color: $mainRedColor;
+    color: $mainColour;
+    font-size: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: 10px;
+    left: 20px;
+  }
+}
+
+.timeContent{
+  .row{
+    @include flexRow;
+  }
+  padding-top: 110px;
+  display: none;
+  .readyTime{
+    @include flexCenter;
+    background-color: $contentBgColor;
+    border-radius: 10px;
+    border: 1px solid $mainColour;
+    height: 80px;
+    width: 320px;
+    margin-top: 30px;
+    font-size: 30px;
+  }
+}
+
+
+.totalBar{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  background-color: #737373;
+  padding-left: 10px;
+  padding-right: 10px;
+  h2{
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .menuContainer{
+    .menuList{
+      .menuItemTitle{
+        font-size: 1.5em;
+        padding-top: 10px;
+      }
+      .menuTitle{
+        color: #FFFD80;
+        font-size: 1.75em;
+      }
+      .menuItem{
+        font-size: 1em;
+        line-height: 90%;
+      }
+    }
+  }
+  .orderingContent{
+    .box{
+      font-size: 20px;
+      .smallBtn{
+        font-size: 18px;
+      }
+      .largeBtn{
+        font-size: 18px;
+      }
+    }
+  }
+
+  .confirmOrderContent{
+    .mainContainer{
+      .box{
+        font-size: 20px;
+        .smallBtn{
+          font-size: 18px;
+        }
+        .largeBtn{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .paymentContent{
+    .creditCardPayment{
+      margin: 10px auto 62px auto;
+      width: 70%;
+      font-size: 20px;
+      form{
+        .cardDetails{
+          input{
+            font-size: 20px;
+          }
+        }
+        .row{
+          .card{
+            input{
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      .submitBtn{
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+}

@@ -1,0 +1,43 @@
+$mainColour: white;
+
+$columns: 12;
+$columnWidth: 100% / $columns;
+
+$item1: #5ECC60;
+$item2: #DB3B99;
+$item3: #DEC13E;
+$item4: #C91006;
+$item5: #2BC2BA;
+
+$contentBgColor: #363636;
+$mainGreenColor: #3B7A26;
+$mainRedColor: #A62323;
+
+@for $i from 1 through $columns{
+  .col#{$i}{
+    width: $columnWidth * $i;
+
+  }
+}
+
+$offset: 12;
+$offsetMargin: 100% / $offset;
+
+@for $i from 1 through $offset{
+  .offset#{$i}{
+    margin-left: $offsetMargin * $i;
+
+  }
+}
+
+@mixin flexCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexRow{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
